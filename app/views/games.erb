@@ -3,9 +3,12 @@
   <div id="body">
 
     <div id="content">
-      @card.question
-      <form
-      <name="guess" input type="text" method="post" action="">
+      <%=@card.question%>
+      <form action="/games" method="post" >
+        Enter your guess:
+        <input type="text" name="guess"  >
+        <input type="submit" value="Guess" >
+      </form>
 
 
 

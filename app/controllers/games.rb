@@ -1,4 +1,6 @@
-
+get '/games' do
+  erb :test
+end
 
 get '/games/:game_id' do
   @game_name = "test" #Game.where(id: params[:id]).name
@@ -8,12 +10,13 @@ end
 
 post '/games' do
   @game_score = 0
+  @card = Card.first
   if params[:guess] == @card.answer
     @game_score += 2
   else
     @game_score-= 1
   end
-  redirect 'games/:game_id'
+  redirect to '/checking'
 end
 
 # get '/bands/new' do
