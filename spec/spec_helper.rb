@@ -21,6 +21,6 @@ def app
   Sinatra::Application
 end
 
-def new_bands_path
-  '/bands/new'
-end
+# def new_bands_path
+#   '/bands/new'
+# end

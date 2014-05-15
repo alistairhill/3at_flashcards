@@ -1,5 +1,5 @@
-class Deck < ActiveRecord::Base
+class Game < ActiveRecord::Base
   # Remember to create a migration!
-  has_many :cards
+  belongs_to :deck
   belongs_to :user
 end
