@@ -5,13 +5,15 @@ get '/' do
 end
 
 get '/decks' do
-  #session={user_id: 404, user_name: "Rao"}
   session[:user_id]='404'
   session[:user_name]='Rao'
-  #erb :decks
-  redirect '/test'
+  @decks = Deck.all
+  erb :decks
 end
 
-get '/test' do
-    "#{session[:user_name]}, #{session[:user_id]}"
+get '/decks/:id' do
+  #game = Game.create(user_id: session[:user_id], deck_id: params[:id])
+  #session[:game_id]=game.id
+  redirect "/games/1"#{game.id}"
 end
+
