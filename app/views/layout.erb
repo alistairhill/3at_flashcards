@@ -29,6 +29,7 @@
           <input type="submit" value="decks">
         </form>
       <% if logged? %>
+        <img src="<%= session[:image_location] %>">
         <form action="/logout" method="post">
           <input type="submit" value="logout">
         </form>
@@ -43,5 +44,6 @@
   <%= yield %>
   </div>
 </body>
+<footer></footer>
 </html>
 

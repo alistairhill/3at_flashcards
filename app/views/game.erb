@@ -5,12 +5,12 @@
     <div id="content">
       <%=@card.question%>
       <form action="/turn" method="post" >
-        Enter your guess:
-        <input type="text" name="guess"  >
+
+        <input type="text" name="guess" placeholder="Enter your guess" >
         <input type="submit" value="Guess" >
       </form>
       <form action="/skipcard" method='post'>
-        <input type='submit' value='Skip'>
+        <input class="skip_button" type='submit' value='Skip'>
       </form>
       <%if @last_answer != nil%>
       <p><%="The answer to the last question was #{@last_answer}. Try the next card."%></p>
