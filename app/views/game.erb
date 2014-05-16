@@ -3,6 +3,7 @@
   <div id="body">
 
     <div id="content">
+      <div><p><%="#{@game.deck.name}: #{@game.deck.description}"%></p></div>
       <%=@card.question%>
       <form action="/turn" method="post" >
 
