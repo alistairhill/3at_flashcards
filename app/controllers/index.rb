@@ -50,7 +50,7 @@ post '/login' do
   redirect '/loginerror' if !logged?
 end
 
-post '/logout' do
+get '/logout' do
   logoff
   redirect '/'
 end

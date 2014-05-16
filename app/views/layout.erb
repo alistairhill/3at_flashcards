@@ -24,21 +24,29 @@
     <div>
       <a href="/"><img src="../images/navbar_logo.png" id="navlogo"></a>
     </div>
-    <div class="logout_button">
-        <form action="/decks" method="get">
+
+    <div class="links">
+
+              <% if logged? %>
+        <img src="<%= session[:image_location] %>" class="user_img"></li>
+        <a href="/decks">decks</a>
+<!--           <form action="/decks" method="get">
           <input type="submit" value="decks">
-        </form>
-      <% if logged? %>
-        <img src="<%= session[:image_location] %>">
-        <form action="/logout" method="post">
+        </form> -->
+<a href="/highscore">highscores</a>
+        <a href="/myscores">my scores</a>
+<a href="/logout">logout</a>
+ <!--   <form action="/logout" method="post">
           <input type="submit" value="logout">
-        </form>
+        </form> -->
       <% else %>
-        <form action="/signup" method="get">
+      <a href="/signup">signup</a>
+<!--         <form action="/signup" method="get">
           <input type="submit" value="signup">
-        </form>
+        </form> -->
       <% end %>
     </div>
+
   </div>
   <div class="bodydiv">
   <%= yield %>
