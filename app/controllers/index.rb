@@ -4,6 +4,7 @@ get '/' do
 end
 
 get '/decks' do
+  session[:last_answer]=nil
   @decks = Deck.all
   erb :decks
 end

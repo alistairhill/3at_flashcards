@@ -12,7 +12,9 @@
       <form action="/skipcard" method='post'>
         <input type='submit' value='Skip'>
       </form>
-      <p>The answer to the last question was <%=@score_correct%>. Try the next card.</p>
+      <%if @last_answer != nil%>
+      <p><%="The answer to the last question was #{@last_answer}. Try the next card."%></p>
+      <%end%>
       <p>Your score is: <%=@game_score%></p>
     </div>
   </div>
