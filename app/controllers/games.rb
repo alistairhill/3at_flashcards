@@ -1,5 +1,4 @@
 
-
 get '/games/:game_id' do
   @game_name = Game.find(params[:game_id])#.name
   @game_score = Game.find(params[:game_id]).score
@@ -23,16 +22,3 @@ post '/games' do
   end
   redirect to "/games/#{game_id}"
 end
-
-# get '/bands/new' do
-#   erb :new_band
-# end
-
-# get '/bands/:id' do
-#   @band = Band.find(params[:id])
-#   erb :show_band
-# end
-
-# get '/info' do
-#   Demo.new(self).info
-# end

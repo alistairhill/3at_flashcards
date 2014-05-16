@@ -1,5 +1,5 @@
 def login(params)
-  user=User.find_by_email('ali@uk.com')
+  user=User.find_by_email(params[:email])
   if user.password == params[:password]
     session[:user_id] = user.id
     session[:user_name] = user.name
@@ -9,8 +9,7 @@ def login(params)
 end
 
 def logoff
-  session[:user_id]=nil
-  session[:user_name]=nil
+  session.clear
 end
 
 def logged?
