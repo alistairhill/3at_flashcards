@@ -4,9 +4,6 @@ get '/' do
 end
 
 get '/decks' do
-  session.clear
-  session[:user_id]='404'
-  session[:user_name]='Rao'
   @decks = Deck.all
   erb :decks
 end
@@ -43,4 +40,19 @@ end
 
 post '/newdeck/:id/finishcards' do
   redirect '/decks'
+end
+
+post '/login' do
+  session.clear
+  login(params)
+  redirect '/decks' if logged?
+  redirect '/wronglogin' if !logged?
+end
+
+get '/wronglogin' do
+  'u suck'
+end
+
+get '/highscore' do
+  erb :highscore
 end
