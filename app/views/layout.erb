@@ -17,20 +17,23 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+<title>3AT Flashcards</title>
 </head>
 <body>
   <div class="navbar">
     <div>
       <a href="/"><img src="../images/navbar_logo.png" id="navlogo"></a>
     </div>
-    <div class="logout">
+    <div class="logout_button">
+        <form action="/decks" method="get">
+          <input type="submit" value="decks">
+        </form>
       <% if logged? %>
         <form action="/logout" method="post">
           <input type="submit" value="logout">
         </form>
       <% else %>
-        <form action="/signup" method="post">
+        <form action="/signup" method="get">
           <input type="submit" value="signup">
         </form>
       <% end %>

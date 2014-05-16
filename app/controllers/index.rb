@@ -59,5 +59,15 @@ get '/wronglogin' do
 end
 
 get '/highscore' do
+  @games = Game.all.sort_by!{|game| game.score}.reverse
   erb :highscore
+end
+
+get '/signup' do
+  erb :_signup
+end
+
+post '/newuser' do
+  User.create(name: params[:name], email: params[:email], password_hash: params[:password_hash])
+  redirect '/'
 end

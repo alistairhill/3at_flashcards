@@ -2,10 +2,12 @@
   <div class = "logo">
   </div>
   <div class = "login">
-    <form action='/login' method='post'>
+    <form action='/newuser' method='post'>
+      <input type='text' name='name' placeholder="name"><br>
       <input type='text' name='email' placeholder="email"><br>
       <input type='password' name='password_hash' placeholder="password"><br>
-      <input type='submit' value='login'>
+      <input type='password' name='confirm_password_hash' placeholder="confirm password"><br>
+      <input type='submit' value='Sign Up'>
     </form>
   </div>
 </div>

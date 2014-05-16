@@ -1,20 +1,6 @@
- {
-  background-image:url('../images/3at_flashcards_black_red.png');
-  background-repeat: no-repeat;
-  background-color: rgba(255,255,255,0.7);
-}
 
-.container {
-  margin: 20px auto;
-  width: 70%;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
 
-th {
-  text-align: left;
-}
-
+/*============nav bar============*/
 .navbar {
   width: 100%;
   background-color: black;
@@ -23,31 +9,22 @@ th {
   height: 44px;
 }
 
-.login {
-  float: right;
-}
-
-.logo {
-  float: left;
-}
-
 #navlogo {
   width: 200px;
   height: 40px;
   float: left;
 }
 
-.logout {
+.logout_button {
   float: right;
   margin-right: 50px;
   margin-top: 15px;
 }
 
-.logout input {
+.logout_button input {
   border: none;
   background: none;
   font-size: 12px;
-
 }
 
 .bodydiv {
@@ -56,17 +33,48 @@ th {
   margin: auto;
 }
 
+/*============main content============*/
+th {
+  text-align: left;
+}
+.container {
+  margin: 20px auto;
+  width: 60%;
+  padding: 20px 20px 20px 20px;
+  margin: auto center;
+  /*border: 1px dotted black;*/
+}
+
+.logo {
+  float: left;
+  background-image:url('../images/3at_flashcards_black_red.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 200px 150px;
+  width: 270px;
+  height: 200px;
+  margin-left: 10px;
+}
+
+.signup input {
+  float: right;
+  /*background-color: rgba(255,255,255,0.4);*/
+}
+
+/*============game content============*/
+
 .deck {
   margin: 5px;
 }
 
-.deck ul li{
-  list-style-type: none;
+.deck_table {
+  width: 88%;
 }
 
 .deck_selection {
   text-align: right;
   float: right;
+  padding: 5px;
   /*border: 1px solid black;*/
 }
 
@@ -74,9 +82,20 @@ th {
   text-decoration: none;
 }
 
+tr:nth-child(odd)
+{
+background:#feefff;
+}
+
+tr:nth-child(even)
+{
+background:#fff;
+}
+
 .deck_name {
   /*float: left;*/
   /*border: 1px solid black;*/
+  padding: 5px;
   margin: 5px;
 }
 
