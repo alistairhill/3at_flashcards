@@ -7,11 +7,11 @@ get '/game' do
   erb :game
 end
 
-post '/setgame' do
-  game_id = session[:game_id]
-  @game = Game.find(game_id)
+post '/turn' do
+  @game_id = session[:game_id]
+  @game = Game.find(@game_id)
   @card = Card.find(session[:game_deck].last)
-  if params[:guess] == @card.answer
+  if params[:guess].downcase == @card.answer
     @game.score += 5
     session[:last_answer] = "correct"
     @game.save
@@ -28,12 +28,12 @@ end
 post '/skipcard' do
   lcard=session[:game_deck].pop
   session[:game_deck].unshift(lcard)
-  @game.score -= 1
+  game = Game.find(session[:game_id])
+  game.score -= 1
   redirect '/game'
 end
 
 get '/gameover' do
   session[:last_answer]=nil
-  @game = Game.find(session[:game_id])
   erb :gameover
 end
