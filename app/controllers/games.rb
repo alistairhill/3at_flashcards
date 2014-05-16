@@ -40,3 +40,8 @@ get '/gameover' do
   @games = Game.all.sort_by!{|game| game.score}.reverse
   erb :gameover
 end
+
+get '/myscores' do
+  @games = Game.where(user_id: session[:user_id]).sort_by!{|game| game.score}.reverse
+  erb :myscores
+end

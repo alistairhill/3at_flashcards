@@ -1,0 +1,8 @@
+<div id="content">
+<p>Your score is high.</p>
+<div>
+  <ul><%@games.each do |game|%>
+  <li><%= "#{game.user.name} - #{game.deck.name} - #{game.score}" %></li>
+  <%end%>
+  <ul></div>
+</div>
