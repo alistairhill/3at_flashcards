@@ -4,6 +4,7 @@ get '/' do
 end
 
 get '/decks' do
+  session[:last_answer]=nil
   @decks = Deck.all
   erb :decks
 end
@@ -46,7 +47,7 @@ post '/login' do
   session.clear
   login(params)
   redirect '/decks' if logged?
-  redirect '/wronglogin' if !logged?
+  redirect '/loginerror' if !logged?
 end
 
 post '/logout' do
@@ -54,8 +55,8 @@ post '/logout' do
   redirect '/'
 end
 
-get '/wronglogin' do
-  'u suck'
+get '/loginerror' do
+  erb :loginerror
 end
 
 get '/highscore' do
@@ -68,6 +69,6 @@ get '/signup' do
 end
 
 post '/newuser' do
-  User.create(name: params[:name], email: params[:email], password_hash: params[:password_hash])
+  User.create(params)
   redirect '/'
 end

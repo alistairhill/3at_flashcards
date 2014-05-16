@@ -3,7 +3,7 @@ get '/game' do
   @game = Game.find(session[:game_id])
   @game_score = @game.score
   @card = Card.find(session[:game_deck].last)
-  @score_correct = session[:last_answer]
+  @last_answer = session[:last_answer]
   erb :game
 end
 
