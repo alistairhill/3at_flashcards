@@ -50,6 +50,11 @@ post '/login' do
   redirect '/loginerror' if !logged?
 end
 
+post '/logout' do
+  logoff
+  redirect '/'
+end
+
 get '/loginerror' do
   erb :loginerror
 end
@@ -60,10 +65,10 @@ get '/highscore' do
 end
 
 get '/signup' do
-  erb :signup
+  erb :_signup
 end
 
 post '/newuser' do
-  User.create(params)#name: params[:name], email: params[:email], password_hash: params[:password_hash])
+  User.create(params)
   redirect '/'
 end
