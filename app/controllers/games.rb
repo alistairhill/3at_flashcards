@@ -34,5 +34,6 @@ end
 
 get '/gameover' do
   session[:last_answer]=nil
-  'game over'
+  @game = Game.find(session[:game_id])
+  erb :gameover
 end
