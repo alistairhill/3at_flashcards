@@ -30,10 +30,13 @@ post '/skipcard' do
   session[:game_deck].unshift(lcard)
   game = Game.find(session[:game_id])
   game.score -= 1
+  game.save
   redirect '/game'
 end
 
 get '/gameover' do
+  @game=Game.find(session[:game_id])
   session[:last_answer]=nil
+  @games = Game.all.sort_by!{|game| game.score}.reverse
   erb :gameover
 end
