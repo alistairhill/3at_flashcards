@@ -4,10 +4,13 @@
 
     <div id="content">
       <%=@card.question%>
-      <form action="/games" method="post" >
+      <form action="/setgame" method="post" >
         Enter your guess:
         <input type="text" name="guess"  >
         <input type="submit" value="Guess" >
+      </form>
+      <form action="/skipcard" method='post'>
+        <input type='submit' value='Skip'>
       </form>
       <p>The answer to the last question was <%=@score_correct%>. Try the next card.</p>
       <p>Your score is: <%=@game_score%></p>
