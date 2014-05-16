@@ -1,0 +1,29 @@
+<div id="nav_bar">
+
+  <div id="body">
+
+    <div id="content">
+      Create your flashcards for <%=@deck_name%>!
+      <form action="/newdeck/<%=@deck_id%>/newcard" method="post" >
+        <p>Enter the question for the card:
+        <input type="text" name="card_question"  ></p>
+        <p>Enter the answer for the card:
+        <input type="text" name="card_answer"  ></p>
+        <p><input type="submit" value="Save" ></p>
+      </form>
+      <form action="/newdeck/<%=@deck_id%>/finishcards" method="post" >
+        <input type="submit" value="Finished cards" >
+      </form>
+
+      <p>Your cards are:</p>
+      <%@card_group.each do |card|%>
+        <%= "*"*50%>
+        <p>The question is: <%=card.question%></p>
+        <p>The answer is: <%=card.answer%></p>
+      <%end%>
+
+
+
+    </div>
+  </div>
+</div>

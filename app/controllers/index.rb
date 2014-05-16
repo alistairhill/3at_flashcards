@@ -19,5 +19,26 @@ get '/decks/:id' do
 end
 
 get '/newdeck' do
-  "New deck coming soon tm."
+  erb :newdeck
+end
+
+post '/newdeck' do
+  deck = Deck.create(name: params[:deck_name], description: params[:deck_description])
+  redirect "/newdeck/#{deck.id}/createcards"
+end
+
+get '/newdeck/:id/createcards' do
+  @card_group = Deck.find(params[:id]).cards
+  @deck_id = params[:id]
+  @deck_name = Deck.find(params[:id]).name
+  erb :createcards
+end
+
+post '/newdeck/:id/newcard' do
+  Card.create(question: params[:card_question], answer: params[:card_answer], deck_id: params[:id])
+  redirect back
+end
+
+post '/newdeck/:id/finishcards' do
+  redirect '/decks'
 end
