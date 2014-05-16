@@ -49,6 +49,11 @@ post '/login' do
   redirect '/wronglogin' if !logged?
 end
 
+post '/logout' do
+  logoff
+  redirect '/'
+end
+
 get '/wronglogin' do
   'u suck'
 end

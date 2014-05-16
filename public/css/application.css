@@ -1,3 +1,9 @@
+ {
+  background-image:url('../images/3at_flashcards_black_red.png');
+  background-repeat: no-repeat;
+  background-color: rgba(255,255,255,0.7);
+}
+
 .container {
   margin: 20px auto;
   width: 70%;
@@ -9,12 +15,39 @@ th {
   text-align: left;
 }
 
-
 .navbar {
   width: 100%;
   background-color: black;
   padding: 10px;
   color:white;
+  height: 44px;
+}
+
+.login {
+  float: right;
+}
+
+.logo {
+  float: left;
+}
+
+#navlogo {
+  width: 200px;
+  height: 40px;
+  float: left;
+}
+
+.logout {
+  float: right;
+  margin-right: 50px;
+  margin-top: 15px;
+}
+
+.logout input {
+  border: none;
+  background: none;
+  font-size: 12px;
+
 }
 
 .bodydiv {
@@ -47,10 +80,4 @@ th {
   margin: 5px;
 }
 
-.login {
-  float: right;
-}
 
-.logo {
-  float: left;
-}
