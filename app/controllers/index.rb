@@ -12,8 +12,9 @@ get '/decks' do
 end
 
 get '/decks/:id' do
-  #game = Game.create(user_id: session[:user_id], deck_id: params[:id])
-  #session[:game_id]=game.id
-  redirect "/games/1"#{game.id}"
+  game = Game.create(user_id: session[:user_id], deck_id: params[:id])
+  game.deck.cards
+  session[:game_id]=game.id
+  redirect "/games/#{game.id}"
 end
 
