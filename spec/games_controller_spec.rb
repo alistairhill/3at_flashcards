@@ -8,17 +8,17 @@ describe "Games controller" do
     context "When a correct answer is entered" do
 
       it 'updates the score by 2' do
+
         game = Game.create(user_id: 1, deck_id: 1)
+        game_id = game.id
         card = Card.create(question: "spec test", answer: "true", deck_id: 1)
         deck = Deck.create(name: "spectest", description: "testing the feature")
         old_score = game.score
-        # puts old_score.inspect
-        post '/games', {guess: "true"}
-        # p game.score
-        # expect{post '/games', {guess: "true"}}.to change{game.score}.by(2)
-        # new_score = game.score
-        # puts new_score.inspect
-        # expect(game.score - old_score).to eq(2)
+        fake_session = { :game_id => game.id }
+        post '/games', {guess: "true"}, { 'rack.session' => fake_session }
+        game.reload
+        new_score = game.score
+        expect(game.score - old_score).to eq(2)
 
       end
 
