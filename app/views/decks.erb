@@ -4,7 +4,7 @@
   <p>Choose a deck to start a game, or create a <a href='/newdeck'>new deck</a>.</p>
   <div class = "deck"><ul>
    <% @decks.each do |deck|%>
-   <li><div class="deck_name"><%= deck.name %> - <%= deck.description %> - </div><div class="deck_selection"><a href="/<%=deck.id%>/setgame">select</a></div></li>
+   <li><div class="deck_name"><%= deck.name %> - </div><div class="deck_selection"><a href="/<%=deck.id%>/setgame">select</a></div></li>
    <%end%>
   </ul></div>
 </div>
