@@ -23,15 +23,34 @@ th {
   margin: auto;
 }
 
+.deck {
+  margin: 5px;
+}
+
+.deck ul li{
+  list-style-type: none;
+}
+
 .deck_selection {
   text-align: right;
   float: right;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+}
 
+.deck_selection a {
   text-decoration: none;
 }
 
 .deck_name {
   /*float: left;*/
-  border: 1px solid black;/*
+  /*border: 1px solid black;*/
+  margin: 5px;
+}
+
+.login {
+  float: right;
+}
+
+.logo {
+  float: left;
 }
