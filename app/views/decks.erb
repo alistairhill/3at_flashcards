@@ -2,9 +2,14 @@
 <div class='container'>
   <h1>Decks</h1>
   <p>Choose a deck to start a game, or create a <a href='/newdeck'>new deck</a>.</p>
-  <div class = "deck"><ul>
-   <% @decks.each do |deck|%>
-   <li><div class="deck_name"><%= deck.name %> - <%= deck.description %> - </div><div class="deck_selection"><a href="/<%=deck.id%>/setgame">select</a></div></li>
-   <%end%>
-  </ul></div>
+  <div class = "deck">
+    <table class="deck_table">
+      <% @decks.each do |deck|%>
+        <tr>
+          <td class="deck_name"><%= deck.name %><%= deck.description %> - </td>
+          <td class="deck_selection"><a href="/<%=deck.id%>/setgame">select</a></td>
+        </tr>
+      <%end%>
+    <table>
+  </div>
 </div>
