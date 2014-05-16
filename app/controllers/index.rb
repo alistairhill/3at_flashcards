@@ -1,20 +1,22 @@
 
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
 get '/decks' do
+  session.clear
   session[:user_id]='404'
   session[:user_name]='Rao'
   @decks = Deck.all
   erb :decks
 end
 
-get '/decks/:id' do
-  game = Game.create(user_id: session[:user_id], deck_id: params[:id])
-  session[:game_deck] = game.deck.cards.shuffle
+get '/:deck_id/setgame' do
+  game = Game.create(user_id: session[:user_id], deck_id: params[:deck_id])
   session[:game_id] = game.id
+  game_deck=[]
+  game.deck.cards.shuffle.each {|card| game_deck<<card.id}
+  session[:game_deck] = game_deck
   redirect "/game"
 end
 
