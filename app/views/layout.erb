@@ -24,26 +24,15 @@
     <div>
       <a href="/"><img src="../images/navbar_logo.png" id="navlogo"></a>
     </div>
-
     <div class="links">
-
-              <% if logged? %>
-        <img src="<%= session[:image_location] %>" class="user_img"></li>
+      <% if logged? %>
         <a href="/decks">decks</a>
-<!--           <form action="/decks" method="get">
-          <input type="submit" value="decks">
-        </form> -->
-<a href="/highscore">highscores</a>
+        <a href="/highscore">highscores</a>
         <a href="/myscores">my scores</a>
-<a href="/logout">logout</a>
- <!--   <form action="/logout" method="post">
-          <input type="submit" value="logout">
-        </form> -->
+        <a href="/logout">logout</a>
+        <img src="<%= session[:image_location] %>" class="user_img">
       <% else %>
-      <a href="/signup">signup</a>
-<!--         <form action="/signup" method="get">
-          <input type="submit" value="signup">
-        </form> -->
+        <a href="/signup">signup</a>
       <% end %>
     </div>
 

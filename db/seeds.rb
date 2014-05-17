@@ -42,10 +42,7 @@ DBC=[["<img src='../images/teaching-large-abi.png'>","abi"],
      ["<img src='../images/rao.jpg'>","rao"],
      ["<img src='../images/derek.jpg'>","derek"]]
 
-
 Deck.create(name: "DBC Guess Who?", description: "Do you know the name of the DBC staff? Prove it!")
-
-User.create(name: 'Amy', password_hash: 'amy', email: 'amy@amy.amy')
 
 DBC.each do |card|
   Card.create(question: card[0], answer: card[1], deck_id: 1)
