@@ -6,6 +6,7 @@ helpers do
     if user!=nil && user.password_hash == params[:password_hash]
       session[:user_id] = user.id
       session[:user_name] = user.name
+      session[:image_location] = user.image_location
     end
   end
 

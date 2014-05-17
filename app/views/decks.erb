@@ -6,10 +6,10 @@
     <table class="deck_table">
       <% @decks.each do |deck|%>
         <tr>
-          <td class="deck_name"><%= deck.name %><%= deck.description %> - </td>
+          <td class="deck_name"><%= deck.name %></td>
           <td class="deck_selection"><a href="/<%=deck.id%>/setgame">select</a></td>
         </tr>
       <%end%>
-    <table>
+    </table>
   </div>
 </div>
