@@ -1,6 +1,7 @@
 helpers do
 
   def login(params)
+    params[:image_location] = 'http://www.clipartbest.com/cliparts/nTE/XXK/nTEXXKkTA.png' if params[:image_location]==nil
     user=User.find_by_email(params[:email])
 
     if user!=nil && user.password_hash == params[:password_hash]
